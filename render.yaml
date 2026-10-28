@@ -4,8 +4,6 @@ services:
     env: docker
     plan: free
     region: oregon
-    # Use httpPort instead of the 'ports' block
-    httpPort: 8081
     envVars:
       - key: TELEGRAM_API_ID
         sync: false
@@ -15,4 +13,4 @@ services:
       name: bot-api-data
       mountPath: /var/lib/telegram-bot-api
       sizeGB: 1
-    startCommand: "--local --dir=/var/lib/telegram-bot-api --http-port=8081"
+    startCommand: "--local --dir=/var/lib/telegram-bot-api --http-port=$PORT"
