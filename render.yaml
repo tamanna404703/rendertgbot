@@ -9,8 +9,3 @@ services:
         sync: false
       - key: TELEGRAM_API_HASH
         sync: false
-    disk:
-      name: bot-api-data
-      mountPath: /var/lib/telegram-bot-api
-      sizeGB: 1
-    startCommand: "--local --dir=/var/lib/telegram-bot-api --http-port=$PORT"
