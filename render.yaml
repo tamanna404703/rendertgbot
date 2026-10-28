@@ -2,10 +2,10 @@ services:
   - type: web
     name: telegram-bot-api
     env: docker
-    plan: free # Change to starter/standard if you need more resources
-    region: oregon # Choose your preferred region (e.g., Frankfurt, Ohio, etc.)
-    ports:
-      - 8081:8081
+    plan: free
+    region: oregon
+    # Use httpPort instead of the 'ports' block
+    httpPort: 8081
     envVars:
       - key: TELEGRAM_API_ID
         sync: false
